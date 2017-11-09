@@ -6,12 +6,14 @@ $(document).on("pagecreate","#pageone",function(){
   
     document.addEventListener("deviceready", onDeviceReady, false); //advanced
     
-            function onDeviceReady() {
-	
-	document.addEventListener("resume", onResume, false);          //advanced
-	document.addEventListener("pause", onPause, false);
+        
+    function onDeviceReady() {
 
-	updateDisplay();
+        document.addEventListener("resume", onResume, false);          //advanced
+	
+        document.addEventListener("pause", onPause, false);
+
+        updateDisplay();
     }  //advanced
     
     
@@ -34,3 +36,20 @@ $(document).on("pagecreate","#pageone",function(){
 
 
 });
+
+
+function onResume() {
+    alert("onresume");
+    
+    //restore prev state of buttons
+    
+}
+
+function onPause() {
+    alert("onPause");
+    
+    window.localStorage.setItem(swipetext,red);
+    window.localStorage.getItem(swipetext,red);
+    
+    //store current state of buttons
+}
